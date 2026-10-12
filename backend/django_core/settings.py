@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_simplejwt.token_blacklist',
+    'drf_spectacular',
     'users',
     'cards',
     'transactions',
@@ -103,6 +104,7 @@ SPECTACULAR_SETTINGS = {
     'DESCRIPTION': 'Django APIs for auth, cards and transactions',
     'VERSION': '1.0.0',
 }
+
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
