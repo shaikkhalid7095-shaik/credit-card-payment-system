@@ -1,0 +1,32 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<h1>Daily Payment Summary</h1>
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Total</th>
+      <th>Success</th>
+      <th>Failed</th>
+      <th>Pending</th>
+      <th>Amount Collected</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in rows %}
+    <tr>
+      <td>{{ row.day }}</td>
+      <td>{{ row.total }}</td>
+      <td>{{ row.success }}</td>
+      <td>{{ row.failed }}</td>
+      <td>{{ row.pending }}</td>
+      <td>&#8377;{{ row.amount }}</td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="6">No transactions yet.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
